@@ -68,6 +68,7 @@
     <Compile Include="QualityOfLife.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmelterMod.cs" />
+    <Compile Include="Teleport.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

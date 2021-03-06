@@ -32,6 +32,8 @@ namespace QualityOfLife
         public static ConfigEntry<int> CharcoalKilnMultiplier;
         public static ConfigEntry<int> CharcoalKilnSecPerProduct;
 
+        // [TELEPORT]
+        public static ConfigEntry<bool> EnableTeleportOres;
         public QualityOfLife()
         {
             Log = this.Logger;
@@ -40,6 +42,8 @@ namespace QualityOfLife
             this.Harmony = new Harmony("iliwili.quality_of_life");
 
             Harmony.CreateAndPatchAll(typeof(SmelterMod));
+            Harmony.CreateAndPatchAll(typeof(Teleport));
+
             Log.LogInfo("QualityOfLife loaded.");
         }
 
@@ -59,6 +63,8 @@ namespace QualityOfLife
 
             CharcoalKilnMultiplier = this.Config.Bind<int>("SMELTER.CHARCOALKILN", "CharcoalKilnMultiplier", 2, "Charcoal Kiln multiplier");
             CharcoalKilnSecPerProduct = this.Config.Bind<int>("SMELTER.CHARCOALKILN", "CharcoalKilnSecPerProduct", 1, "Charcoal Kiln processing time per wood (lowest is 1 but it will still take more than 1 second, don't actualy know why it does that.)");
+
+            EnableTeleportOres = this.Config.Bind<bool>("TELEPORT", "EnableTeleportOres", true, "Enable/Disable the option to teleport with ores.");
         }
     }
 }
