@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using System.Collections.Generic;
+using BepInEx;
 using BepInEx.Logging;
 using BepInEx.Configuration;
 using HarmonyLib;
@@ -34,6 +35,9 @@ namespace QualityOfLife
 
         // [TELEPORT]
         public static ConfigEntry<bool> EnableTeleportOres;
+
+
+        public static List<Character> Wolves = new List<Character>();
         public QualityOfLife()
         {
             Log = this.Logger;
